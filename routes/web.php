@@ -32,4 +32,4 @@ Auth::routes();
 Route::get('/', array('as' => 'home', 'uses' => 'PostsController@index'));
 // Route::get('post/{id}', array('as' => 'post', 'uses' => 'PostsController@show'))->where('id', '[1-9][0-9]*');
 Route::get('post/{id}', 'PostsController@show')->name('post')->where('id', '[1-9][0-9]*');
-Route::get('/home', 'HomeController@index');
+Route::get('/home', array('as' => 'dashboard', 'uses' => 'HomeController@index'));

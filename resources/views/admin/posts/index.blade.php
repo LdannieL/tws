@@ -29,9 +29,9 @@
                     <td>{{$post->user_id}}</td>
 
                     <td class="text-right">
-                        <a class="btn btn-primary" href="{{ route('admin.posts.show', $post->id) }}">View</a>
-                        <a class="btn btn-warning " href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
-                        <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };"><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="_token" value="{{ csrf_token() }}"> <button class="btn btn-danger" type="submit">Delete</button></form>
+                        <a class="margin-b btn btn-primary" href="{{ route('admin.posts.show', $post->id) }}">View</a>
+                        <a class="margin-b btn btn-warning" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
+                        <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };"><input type="hidden" name="_method" value="DELETE"><input type="hidden" name="_token" value="{{ csrf_token() }}"> <button class="margin-b btn btn-danger" type="submit">Delete</button></form>
                     </td>
                 </tr>
 

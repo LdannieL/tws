@@ -28,11 +28,11 @@
                 </div>
             </form>
 
-
+            <p></p>
 
             <a class="btn btn-default" href="{{ route('admin.posts.index') }}">Back</a>
             <a class="btn btn-warning" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
-            <form action="#/$post->id" method="DELETE" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };"><button class="btn btn-danger" type="submit">Delete</button></form>
+            <form action="#/$post->id" method="DELETE" style="display: inline; border: none;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };"><button class="btn btn-danger" type="submit">Delete</button></form>
         </div>
     </div>
 

@@ -8,13 +8,19 @@
 
     <title>{{ config('app.name', 'Technical Web Services') }}</title>
 
-    {!! HTML::style('css/style.css') !!}
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <!-- <link href="starter-template.css" rel="stylesheet"> -->
-
+    {!! HTML::style('css/style.css') !!}
+    {!! HTML::style('css/blog.css') !!}
+ {{--    <link href="css/blog.css" rel="stylesheet">
+ --}}
+   
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -57,6 +63,11 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
+                                    <a href="{{ route('dashboard') }}">
+                                        My Dashboard
+                                    </a>
+                                </li>   
+                                <li>
                                     <a href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -82,13 +93,21 @@
 </header>
 
 <main class="container">
-    @yield('content')
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+            <div class="blog-post">
+                @yield('content')
+            </div>
+        </div>
+        @include('layouts._partials.sidebar')
+    </div>
 </main>
 
 <footer>
     <div class="container">
         &copy; {{ date('Y') }} Technical Web Services |
-        {!! link_to_route('admin.posts.index', 'Admin') !!}
+        {!! link_to_route('admin.posts.index', 'Admin') !!}    <p>
+        <a href="#">Back to top</a>
     </div>
 </footer>
 <script src="/js/app.js"></script>
