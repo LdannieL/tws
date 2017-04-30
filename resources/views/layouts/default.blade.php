@@ -12,15 +12,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="starter-template.css" rel="stylesheet"> -->
     {!! HTML::style('css/style.css') !!}
     {!! HTML::style('css/blog.css') !!}
- {{--    <link href="css/blog.css" rel="stylesheet">
- --}}
-   
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -34,7 +31,9 @@
     </script>
 </head>
 <body>
+
 @include('layouts._partials.nav')
+
 <header>
     <div class="container">
         <h1>My Blog</h1>
@@ -53,13 +52,8 @@
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        &copy; {{ date('Y') }} Technical Web Services |
-        {!! link_to_route('admin.posts.index', 'Admin') !!}
-        <a href="#">Back to top</a>
-    </div>
-</footer>
+@include('layouts._partials.footer')
+
 <script src="/js/app.js"></script>
 </body>
 </html>

@@ -23,8 +23,8 @@
                      <p class="form-control-static">{{$post->body}}</p>
                 </div>
                     <div class="form-group">
-                     <label for="user_id">USER_ID</label>
-                     <p class="form-control-static">{{$post->user_id}}</p>
+                     <label for="user_id">USER</label>
+                     <p class="form-control-static">{{$post->user->name}}</p>
                 </div>
             </form>
 

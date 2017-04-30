@@ -6,7 +6,7 @@ h3 { font-size: 15px; }
 header { padding: 20px 0; background: #333 /*#eee*/; margin-bottom: 20px; color: white; }
 main { margin-bottom: 20px; }
 footer { border-top: 1px solid #ccc; margin: 40px 0; padding-top: 20px; text-align: right; }
-.container { max-width: 960px; margin: 0 auto; width: 96%; padding: 0 2%; }
+.container { max-width: 1200px; margin: 0 auto; width: 96%; padding: 0 2%; }
 
 /* forms */
 form { width: 94%; padding: 3%; border: 1px solid #ddd; border-radius: 5px; }
@@ -23,3 +23,4 @@ form.destroy input[type="submit"] { margin-left: 10px; background: #999; display
 form.destroy input[type="submit"]:hover { background: red; }
 
 .margin-b { margin-bottom: 0.5em; }
+.form-btn {border: none;}

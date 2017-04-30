@@ -26,8 +26,14 @@
                      </script>
                 </div>
                     <div class="form-group">
-                     <label for="user_id">USER_ID</label>
-                     <input type="text" name="user_id" class="form-control" value=""/>
+                     <label for="user_id">USER</label>
+                    <select id="user_id" name="user_id" class="form-control" value="{{ old("user_id") }}">
+                        <option>select user</option>
+                          @foreach($users as $user)
+                            <option>{{ $user->name }}</option>
+                          @endforeach
+                      </select> 
+                  {{--    <input type="text" name="user_id" class="form-control" value=""/> --}}
                 </div>
 
 

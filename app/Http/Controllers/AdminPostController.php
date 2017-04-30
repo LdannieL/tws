@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminPostController extends Controller {
@@ -28,7 +29,7 @@ class AdminPostController extends Controller {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::with('user')->latest()->paginate(3);
 
 		return view('admin.posts.index', compact('posts'));
 	}
@@ -40,7 +41,8 @@ class AdminPostController extends Controller {
 	 */
 	public function create()
 	{
-		return view('admin.posts.create');
+		$users = User::get();
+		return view('admin.posts.create', compact('users'));
 	}
 
 	/**
@@ -55,7 +57,8 @@ class AdminPostController extends Controller {
 
 		$post->title = $request->input("title");
         $post->body = $request->input("body");
-        $post->user_id = $request->input("user_id");
+        $user_id = User::where('name', '=', $request->input("user_id"))->first()->id;
+        $post->user_id = $user_id;
 
 		$post->save();
 
@@ -84,8 +87,9 @@ class AdminPostController extends Controller {
 	public function edit($id)
 	{
 		$post = Post::findOrFail($id);
+		$users = User::get();
 
-		return view('admin.posts.edit', compact('post'));
+		return view('admin.posts.edit', compact('post', 'users'));
 	}
 
 	/**
@@ -101,7 +105,8 @@ class AdminPostController extends Controller {
 
 		$post->title = $request->input("title");
         $post->body = $request->input("body");
-        $post->user_id = $request->input("user_id");
+        $user_id = User::where('name', '=', $request->input("user_id"))->first()->id;
+        $post->user_id = $user_id;
 
 		$post->save();
 

@@ -31,8 +31,14 @@
                      </script>
                 </div>
                     <div class="form-group">
-                     <label for="user_id">USER_ID</label>
-                     <input type="text" name="user_id" class="form-control" value="{{$post->user_id}}"/>
+                     <label for="user_id">USER</label>
+                     <select id="user_id" name="user_id" class="form-control" value="{{$post->user->name}}">
+                        <option>{{$post->user->name}}</option>
+                          @foreach($users as $user)
+                            <option>{{ $user->name }}</option>
+                          @endforeach
+                      </select> 
+                 {{--     <input type="text" name="user_id" class="form-control" value="{{$post->user_id}}">{{$post->user->name}}</input> --}}
                 </div>
 
 
